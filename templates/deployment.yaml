@@ -21,6 +21,8 @@ spec:
           containerPort: 80
         - name: https
           containerPort: 5555
+        - name: socket
+          containerPort: 7777
         volumeMounts:
         - name: apache-data
           mountPath: /bitnami/apache

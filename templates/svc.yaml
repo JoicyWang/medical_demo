@@ -25,5 +25,11 @@ spec:
       {{- if (and (eq .Values.service.type "NodePort") (not (empty .Values.service.nodePorts.https)))}}
       nodePort: {{ .Values.service.nodePorts.https }}
       {{- end }}
+    - name: socket
+      port: 7777
+      targetPort: socket
+      {{- if (and (eq .Values.service.type "NodePort") (not (empty .Values.service.nodePorts.socket)))}}
+      nodePort: {{ .Values.service.nodePorts.socket }}
+      {{- end }}
   selector:
     app: {{ template "fullname" . }}

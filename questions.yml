@@ -46,3 +46,11 @@ questions:
     max: 32767
     show_if: "ingress.enabled=false&&serviceType=NodePort"
     label: NodePort Https Port
+  - variable: nodePorts.socket
+    default: ""
+    description: "NodePort socket port(to set explicitly, choose port between 30000-32767)"
+    type: int
+    min: 30000
+    max: 32767
+    show_if: "ingress.enabled=false&&serviceType=NodePort"
+    label: NodePort Socket Port

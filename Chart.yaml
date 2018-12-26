@@ -1,0 +1,14 @@
+name: medical-demo
+version: 4.0.1
+appVersion: 0.0.1
+description: Chart for demo
+keywords:
+- http
+- https
+- www
+- web
+- reverse proxy
+icon: https://bitnami.com/assets/stacks/apache/img/apache-stack-220x234.png
+maintainers:
+- name: virtualization
+engine: gotpl

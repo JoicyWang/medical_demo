@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "fullname" . }}
+    name: medical-demo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+    spec:
+      containers:
+      - name: {{ template "fullname" . }}
+        image: edge:v3
+        imagePullPolicy: Never
+        ports:
+        - name: http
+          containerPort: 80
+        - name: https
+          containerPort: 5555
+        volumeMounts:
+        - name: apache-data
+          mountPath: /bitnami/apache
+      volumes:
+      - name: apache-data
+        emptyDir: {}

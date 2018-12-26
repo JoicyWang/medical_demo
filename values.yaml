@@ -1,0 +1,15 @@
+ingress:
+  enabled: false
+  hosts:
+  - name: wordpress.local
+    tls: false
+    tlsSecret: wordpress.local-tls
+    annotations:
+service:
+  type: LoadBalancer
+  port: 80
+  httpsPort: 443
+  nodePorts:
+    http: ""
+    https: ""
+serviceExternalTrafficPolicy: Cluster
